@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tư tưởng Hồ Chí Minh về xây dựng Chủ nghĩa xã hội">
+    <meta name="keywords" content="Hồ Chí Minh, CNXH, Tư tưởng, Việt Nam">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tư tưởng Hồ Chí Minh | Xây dựng CNXH</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+   <style>
+    body {
+        background: linear-gradient(135deg, #0d0b1e, #1a0033); /* tím xanh đậm */
+        color: #e6e6f0; 
+        font-size: 19px;
+        line-height: 1.9;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+        color: #ffce54; /* xanh cyan nổi bật */
+        font-weight: 700;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+        margin-top: 25px;
+        margin-bottom: 18px;
+    }
+    
+    h5 { font-size: 30px; color: #ffffff;}
+    h1 { font-size: 46px; }
+    h2 { font-size: 40px; }
+    h3 { font-size: 34px; }
+    h4 { font-size: 28px; color: #ffce54; } /* vàng để nhấn */
+    
+    p, li, span, a, div {
+        font-size: 19px;
+        color: #f1f1f1 !important;
+    }
+
+    a:hover {
+        color: #00d9ff !important;
+        text-decoration: underline;
+    }
+
+    /* Hero */
+    .blog-hero {
+        padding: 120px 0;
+        background: linear-gradient(120deg, rgba(13,27,42,0.9), rgba(0, 20, 60, 0.9)),
+                    url("img/blog/blog-hero.jpg") center/cover no-repeat;
+        border-bottom: 5px solid #00d9ff;
+    }
+
+    .blog__hero__text h2 {
+        font-size: 46px;
+        font-weight: 800;
+        color: #ffce54; /* vàng nổi bật */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .blog__hero__text span {
+        font-size: 22px;
+        color: #e0e1dd;
+        font-style: italic;
+    }
+
+    /* Nội dung */
+    .blog-details {
+        padding: 80px 0;
+    }
+
+    .blog__details__content {
+        background: rgba(13, 27, 42, 0.85);
+        padding: 45px;
+        border-radius: 14px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+        animation: fadeInUp 1s ease;
+    }
+
+    .blog__details__text blockquote {
+        font-size: 20px;
+        font-style: italic;
+        padding: 22px;
+        margin: 28px 0;
+        background: rgba(0, 217, 255, 0.08);
+        border-left: 6px solid #00d9ff;
+        border-radius: 8px;
+        color: #f8f9fa;
+    }
+
+    ul li {
+        margin: 12px 0;
+    }
+
+    ul li::marker {
+        color: #00d9ff;
+        font-size: 20px;
+    }
+
+    /* Ảnh minh họa */
+    .blog__details__images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin: 35px 0;
+    }
+
+    .blog__details__images img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog__details__images img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px #00d9ff;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Header giữ nguyên -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="header__nav__option">
+                        <nav class="header__nav__menu mobile-menu">
+                            <ul>
+                                <li><a href="./index.html">Trang chủ</a></li>
+                                <li><a href="./video.html">Video</a></li>
+                                <li class="active"><a href="./noidung.html">Nội dung</a></li>
+                                <li><a href="./quiz.html">Ôn tập</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero text-center">
+        <div class="container">
+            <div class="blog__hero__text">
+                <h2>Tư tưởng Hồ Chí Minh về Xây dựng CNXH</h2>
+                <span>Quan điểm toàn diện, thực tiễn và nhân văn</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="blog-details">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog__details__content">
+                        <div class="blog__details__text">
+                            <h5>
+                                Tư tưởng Hồ Chí Minh về xây dựng Chủ nghĩa xã hội (CNXH) là một hệ thống quan điểm toàn diện,
+                                thực tiễn và nhân văn sâu sắc. Dựa trên tài liệu, có thể tóm tắt nội dung chính như sau:
+                            </h5>
+
+                            <h3>1. Mục tiêu và Bản chất</h3>
+                            <p>Hồ Chí Minh định nghĩa CNXH một cách rất đời thường, không trừu tượng. Bản chất của CNXH theo Người là một xã hội do nhân dân làm chủ, vì hạnh phúc của nhân dân.</p>
+                            <ul>
+                                <li><b>Vì nhân dân:</b>  Mục đích cao nhất của CNXH là làm cho mọi người được tự do, hạnh phúc, được ăn no, mặc đủ, được học hành và có cuộc sống sung sướng. Người khẳng định: 
+                                    <blockquote>“Việc gì có lợi cho dân thì làm. Việc gì có hại cho dân thì phải tránh.”</blockquote>
+                                    và đặt quyền lợi của dân lên trên hết.
+                                </li>
+                                <div class="blog__details__images">
+                                <img src="img/about/1.jpg" alt="Ảnh 1">
+                                </div>
+                                <li><b>Phát triển toàn diện:</b> CNXH không chỉ phát triển kinh tế mà còn tiến bộ về tinh thần, văn hóa, xã hội. 
+                                    Đó là xã hội mà “vật chất ngày càng tăng, tinh thần ngày càng tốt”.</li>
+                                <div class="blog__details__images">
+                                <img src="img/about/2.jpg" alt="Ảnh 1">
+                                </div>
+                                <li><b>Đấu tranh không ngừng:</b> Xây dựng CNXH là một quá trình gian khổ, lâu dài, đòi hỏi phải đấu tranh chống lại cả giặc ngoại xâm lẫn "giặc nội xâm" như tham ô, lãng phí, quan liêu, vốn là sản phẩm của chủ nghĩa cá nhân.</li>
+                            </ul>
+                            <div class="blog__details__images">
+                                <img src="img/about/3.jpg" alt="Ảnh 1">
+                            </div>
+                            <h3>2. Con đường và Phương pháp</h3>
+                            <p>Hồ Chí Minh đã chỉ ra con đường và phương pháp cụ thể để xây dựng CNXH phù hợp với hoàn cảnh Việt Nam.</p>
+                            <ul>
+                                <li><b>Độc lập dân tộc gắn liền với Chủ nghĩa xã hội:</b>  Đây là con đường chiến lược của cách mạng Việt Nam. Hồ Chí Minh nhận thức rằng chỉ có giành được độc lập dân tộc mới có thể xây dựng CNXH, và ngược lại, chỉ có đi lên CNXH mới bảo đảm nền độc lập vững chắc, lâu dài.</li>
+                                <li><b>Dựa vào sức dân:</b> Người tin tưởng sâu sắc rằng "cách mạng là sự nghiệp của quần chúng". Toàn bộ quá trình xây dựng CNXH phải dựa vào sức mạnh, trí tuệ và sự sáng tạo của nhân dân. Nhà nước và cán bộ chỉ là "đầy tớ" của dân, có trách nhiệm tổ chức, hướng dẫn và phục vụ nhân dân.</li>
+                                <div class="blog__details__images">
+                                <img src="img/about/4.jpg" alt="Ảnh 1">
+                            </div>
+                                <li><b>Kết hợp sức mạnh dân tộc và thời đại:</b> Xây dựng CNXH đòi hỏi phải phát huy tối đa tinh thần tự lực, tự cường của dân tộc, đồng thời tranh thủ sự giúp đỡ, ủng hộ của các lực lượng cách mạng và tiến bộ trên thế giới. Đây là cách để tạo ra sức mạnh tổng hợp để vượt qua mọi khó khăn.</li>
+                            </ul>
+
+                            <h3>3. CNXH là Mục đích hay Công cụ?</h3>
+                            <p> Theo Hồ Chí Minh, CNXH là sự thống nhất biện chứng giữa mục đích và công cụ.</p>
+                            <ul>
+                                <li><b>Là mục đích:</b> CNXH là mục tiêu cuối cùng của cách mạng Việt Nam. Đó là một xã hội công bằng, dân chủ, văn minh, nơi mọi người dân đều được hạnh phúc, tự do, ấm no. Đây là một đích đến lý tưởng mà Hồ Chí Minh và Đảng ta luôn hướng tới.</li>
+                                <li><b>Là công cụ:</b> CCNXH không phải là một đích đến trừu tượng. Nó là con đường, là phương tiện, là một hệ thống tổ chức (thông qua Nhà nước xã hội chủ nghĩa và sự lãnh đạo của Đảng) để đạt được các mục tiêu thực tiễn, cụ thể như độc lập dân tộc, giải phóng con người, xây dựng đất nước giàu mạnh và mang lại hạnh phúc cho nhân dân. Hồ Chí Minh đã biến CNXH từ một lý thuyết thành một công cụ hành động để giải quyết các vấn đề cấp bách của dân tộc.</li>
+                            </ul>
+
+                            <blockquote>
+                                Tư tưởng này thể hiện sự hài hòa giữa lý luận và thực tiễn, biến CNXH từ lý thuyết thành 
+                                động lực hành động mạnh mẽ, phù hợp với hoàn cảnh cụ thể của Việt Nam.
+                            </blockquote>
+
+                            <!-- 4 ảnh minh họa -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer giữ nguyên -->
+    <footer class="footer">
+        <div class="container">
+            <!-- giữ nguyên y như trang trước -->
+        </div>
+    </footer>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

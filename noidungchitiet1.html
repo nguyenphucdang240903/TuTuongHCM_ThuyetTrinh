@@ -19,96 +19,106 @@
 
    
 </head>
- <style>
-        body {
-            background: linear-gradient(135deg, #001f3f, #000814);
-            color: #fff;
-            font-size: 18px;
-            line-height: 1.8;
-            font-family: 'Josefin Sans', sans-serif;
-        }
+<style>
+    body {
+        background: linear-gradient(135deg, #0d1b2a, #000814); /* xanh đen đậm */
+        color: #e0e1dd; /* trắng ngà dễ đọc */
+        font-size: 19px;
+        line-height: 1.9;
+        font-family: 'Josefin Sans', sans-serif;
+    }
 
-        h1, h2, h3, h4 {
-            color: #fff;
-            font-weight: bold;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-        }
+    h1, h2, h3, h4 {
+        color: #00d9ff; /* xanh cyan nổi bật */
+        font-weight: 700;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+        margin-top: 25px;
+        margin-bottom: 18px;
+    }
 
-        h1 { font-size: 42px; }
-        h2 { font-size: 36px; }
-        h3 { font-size: 30px; }
-        h4 { font-size: 26px; }
+    h1 { font-size: 46px; }
+    h2 { font-size: 40px; }
+    h3 { font-size: 34px; }
+    h4 { font-size: 28px; color: #ffce54; } /* vàng để nhấn */
+    
+    p, li, span, a, div {
+        font-size: 19px;
+        color: #f1f1f1 !important;
+    }
 
-        p, li, span, a, div {
-            font-size: 18px;
-            color: #eee !important;
-        }
+    a:hover {
+        color: #00d9ff !important;
+        text-decoration: underline;
+    }
 
-        /* Hero */
-        .blog-hero {
-            padding: 120px 0;
-            background: linear-gradient(120deg, rgba(0, 80, 160, 0.85), rgba(0, 40, 80, 0.95)),
-                        url("img/blog/blog-hero.jpg") center/cover no-repeat;
-            border-bottom: 4px solid #0077ff;
-        }
+    /* Hero */
+    .blog-hero {
+        padding: 120px 0;
+        background: linear-gradient(120deg, rgba(13,27,42,0.9), rgba(0, 20, 60, 0.9)),
+                    url("img/blog/blog-hero.jpg") center/cover no-repeat;
+        border-bottom: 5px solid #00d9ff;
+    }
 
-        .blog__hero__text h2 {
-            font-size: 44px;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
+    .blog__hero__text h2 {
+        font-size: 46px;
+        font-weight: 800;
+        color: #ffce54; /* vàng nổi bật */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 
-        .blog__hero__text span {
-            font-size: 20px;
-            color: #ddd;
-        }
+    .blog__hero__text span {
+        font-size: 22px;
+        color: #e0e1dd;
+        font-style: italic;
+    }
 
-        /* Nội dung */
-        .blog-details {
-            padding: 80px 0;
-        }
+    /* Nội dung */
+    .blog-details {
+        padding: 80px 0;
+    }
 
-        .blog__details__content {
-            background: rgba(0, 0, 0, 0.55);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-            animation: fadeInUp 1s ease;
-        }
+    .blog__details__content {
+        background: rgba(13, 27, 42, 0.85);
+        padding: 45px;
+        border-radius: 14px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+        animation: fadeInUp 1s ease;
+    }
 
-        .blog__details__text blockquote {
-            font-size: 20px;
-            font-style: italic;
-            padding: 20px;
-            margin: 25px 0;
-            background: rgba(0, 40, 80, 0.6);
-            border-left: 5px solid #00aaff;
-            border-radius: 8px;
-            color: #fff;
-        }
+    .blog__details__text blockquote {
+        font-size: 20px;
+        font-style: italic;
+        padding: 22px;
+        margin: 28px 0;
+        background: rgba(0, 217, 255, 0.08);
+        border-left: 6px solid #00d9ff;
+        border-radius: 8px;
+        color: #f8f9fa;
+    }
 
-        ul li {
-            margin: 10px 0;
-        }
+    ul li {
+        margin: 12px 0;
+    }
 
-        ul li::marker {
-            color: #00aaff;
-        }
+    ul li::marker {
+        color: #00d9ff;
+        font-size: 20px;
+    }
 
-        /* Animation */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    /* Animation */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
         }
-    </style>
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
 <body>
     <!-- Header giữ nguyên -->
     <header class="header">
