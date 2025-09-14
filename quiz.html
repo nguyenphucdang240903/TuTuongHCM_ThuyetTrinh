@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Tư tưởng Hồ Chí Minh</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #1a1b26;
+      font-family: 'Segoe UI', sans-serif;
+      color: #e5e5e5;
+    }
+
+    /* Header */
+    header {
+      background: #11121a;
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+
+    header nav a {
+      color: #e5e5e5;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    header nav a:hover,
+    header nav .active {
+      color: #f39c12;
+    }
+
+    /* Quiz */
+    .quiz-container {
+      background: #222437;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .quiz-options label {
+      display: block;
+      background: #2d2f48;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .quiz-options input {
+      display: none;
+    }
+
+    .quiz-options label:hover {
+      background: #343759;
+    }
+
+    .quiz-options input:checked+label {
+      border-color: #f39c12;
+      background: #3e405f;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .correct {
+      background: #27ae60;
+      color: #fff;
+    }
+
+    .wrong {
+      background: #c0392b;
+      color: #fff;
+    }
+
+    .btn-next {
+      margin-top: 20px;
+      background: #f39c12;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+      transition: 0.2s;
+    }
+
+    .btn-next:hover {
+      background: #d35400;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #222437;
+      border-radius: 15px;
+      padding: 20px;
+      height: 100%;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .question-nav button {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      border: none;
+      border-radius: 10px;
+      background: #2d2f48;
+      color: #e5e5e5;
+      transition: 0.2s;
+    }
+
+    .question-nav button.active {
+      background: #f39c12;
+      color: #fff;
+    }
+
+    .question-nav button:hover {
+      background: #44486a;
+    }
+
+    /* Footer */
+    footer {
+      background: #11121a;
+      color: #e5e5e5;
+      margin-top: 50px;
+      padding: 50px 0 20px;
+    }
+
+    footer h6 {
+      color: #f39c12;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #e5e5e5;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      color: #f39c12;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2d2f48;
+      margin-top: 30px;
+      padding-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container d-flex justify-content-between align-items-center">
+      <h4 class="text-light m-0">Tư Tưởng Hồ Chí Minh</h4>
+      <nav>
+        <a href="./index.html">Trang chủ</a>
+        <a href="./noidung.html">Nội dung</a>
+        <a href="./video.html">Video</a>
+        <a href="./quiz.html" class="active">Ôn tập</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <div class="container">
+    <div class="row g-4">
+      <!-- Câu hỏi -->
+      <div class="col-lg-8">
+        <div class="quiz-container">
+          <h5 id="question">Câu hỏi sẽ hiển thị tại đây</h5>
+          <div class="quiz-options" id="options"></div>
+          <div id="result" class="result"></div>
+          <button class="btn-next" onclick="nextQuestion()">Câu tiếp theo</button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <h6>Thống kê</h6>
+          <p id="scoreBoard">Điểm: 0</p>
+          <p id="progress">Đã trả lời: 0</p>
+          <hr>
+          <h6>Danh sách câu hỏi</h6>
+          <div class="question-nav" id="questionNav"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Giới thiệu -->
+        <div class="col-lg-4 col-md-6">
+          <h6>Về trang này</h6>
+          <p>
+            Trang web học tập về tư tưởng Hồ Chí Minh, tập trung làm rõ câu hỏi:
+            <em>“Chủ nghĩa xã hội là mục đích hay công cụ?”</em>
+          </p>
+        </div>
+
+        <!-- Nội dung -->
+        <div class="col-lg-2 col-md-6">
+          <h6>Nội dung</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Khái niệm CNXH</a></li>
+            <li><a href="#">Xây dựng CNXH</a></li>
+            <li><a href="#">Mục tiêu & Công cụ</a></li>
+            <li><a href="#">Bài giảng</a></li>
+          </ul>
+        </div>
+
+        <!-- Tài liệu -->
+        <div class="col-lg-2 col-md-6">
+          <h6>Tài liệu</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Giáo trình</a></li>
+            <li><a href="#">Bài viết</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Tư liệu khác</a></li>
+          </ul>
+        </div>
+
+        <!-- Đăng ký -->
+        <div class="col-lg-4 col-md-6">
+          <h6>Đăng ký nhận tin</h6>
+          <p>Cập nhật nội dung và tài liệu mới về tư tưởng Hồ Chí Minh.</p>
+          <form class="d-flex">
+            <input type="email" class="form-control me-2" placeholder="Nhập email của bạn">
+            <button class="btn btn-warning">Gửi</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        Copyright &copy; <script>document.write(new Date().getFullYear());</script> |
+        Nghiên cứu & Học tập Tư tưởng Hồ Chí Minh
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const quizData = [
+      {
+        question: "Sự kiện nào minh họa rõ 'thời thế tạo anh hùng' trong hành trình Hồ Chí Minh?",
+        options: [
+          "1919 gửi Yêu sách của nhân dân An Nam",
+          "1930 thành lập Đảng Cộng sản Việt Nam",
+          "1941 lập Việt Minh ở Pác Bó",
+          "2/9/1945 đọc Tuyên ngôn Độc lập"
+        ],
+        correct: 0,
+        explanation: "Sự kiện 1919 gửi Yêu sách và tham dự Đại hội Tours năm 1920 diễn ra khi phong trào giải phóng dân tộc lan rộng."
+      },
+      {
+        question: "Chủ nghĩa xã hội theo Hồ Chí Minh là gì?",
+        options: [
+          "Là mục tiêu cuối cùng của cách mạng",
+          "Là công cụ để giải phóng dân tộc",
+          "Cả mục tiêu và công cụ",
+          "Chỉ là lý thuyết chính trị"
+        ],
+        correct: 2,
+        explanation: "CNXH vừa là mục tiêu vừa là phương tiện để xây dựng một xã hội công bằng, dân chủ, văn minh."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion(index) {
+      currentQuestion = index;
+      const q = quizData[index];
+      document.getElementById("question").innerText = q.question;
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+      q.options.forEach((opt, i) => {
+        optionsDiv.innerHTML += `
+          <input type="radio" id="opt${i}" name="answer" value="${i}">
+          <label for="opt${i}">${opt}</label>
+        `;
+      });
+      document.getElementById("result").style.display = "none";
+      updateNav();
+    }
+
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      if (!selected) return null;
+      const answer = parseInt(selected.value);
+      const q = quizData[currentQuestion];
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      if (answer === q.correct) {
+        score++;
+        resultDiv.className = "result correct";
+        resultDiv.innerText = "Đúng! " + q.explanation;
+      } else {
+        resultDiv.className = "result wrong";
+        resultDiv.innerText = "Sai rồi! " + q.explanation;
+      }
+      document.getElementById("scoreBoard").innerText = `Điểm: ${score}`;
+      document.getElementById("progress").innerText = `Đã trả lời: ${currentQuestion + 1}/${quizData.length}`;
+      return true;
+    }
+
+    function nextQuestion() {
+      if (checkAnswer() === null) return;
+      setTimeout(() => {
+        if (currentQuestion < quizData.length - 1) {
+          loadQuestion(currentQuestion + 1);
+        } else {
+          document.querySelector(".quiz-container").innerHTML =
+            `<h4>Bạn đã hoàn thành! Điểm số: ${score}/${quizData.length}</h4>`;
+        }
+      }, 1500);
+    }
+
+    function updateNav() {
+      const nav = document.getElementById("questionNav");
+      nav.innerHTML = "";
+      quizData.forEach((_, i) => {
+        nav.innerHTML += `<button onclick="loadQuestion(${i})" class="${i === currentQuestion ? 'active' : ''}">${i + 1}</button>`;
+      });
+    }
+
+    loadQuestion(0);
+  </script>
+</body>
+</html>
